@@ -1,5 +1,4 @@
 pipeline {
-
     agent any
 
     tools {
@@ -9,29 +8,19 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-
-            steps {
-                git  'https://github.com/atulvrma06/project.git'
-            }
-        }
-
         stage('Build') {
-
             steps {
                 sh 'mvn clean compile'
             }
         }
 
         stage('Test') {
-
             steps {
                 sh 'mvn test'
             }
         }
 
         stage('Package') {
-
             steps {
                 sh 'mvn package'
             }
